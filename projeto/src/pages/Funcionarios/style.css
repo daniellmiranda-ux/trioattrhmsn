@@ -1,0 +1,86 @@
+.page-container {
+    padding: 32px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-container h2 {
+    color: #1e293b;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+}
+
+.card-wrapper {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-wrapper h3 {
+    color: #334155;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+.form-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.form-grid input {
+    flex: 1;
+    min-width: 180px; /* Um pouco menor para acomodar os 5 inputs na mesma linha se a tela for grande */
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.form-grid input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.btn-submit {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.data-table tr {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.data-table tr:hover {
+    background-color: #f8fafc;
+}
