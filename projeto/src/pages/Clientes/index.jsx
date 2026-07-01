@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../service/api';
 import './style.css';
 
@@ -8,14 +8,24 @@ export default function Clientes() {
 
     const carregarClientes = async () => {
         try {
-        const response = await api.get('/clientes');
-        setClientes(response.data);
-        } catch (error) {
-        alert('Erro ao carregar a listagem de clientes.');
+            const response = await api.get('/clientes');
+            setClientes(response.data);
+        } catch {
+            alert('Erro ao carregar a listagem de clientes.');
         }
     };
 
-    useEffect(() => { carregarClientes(); }, []);
+    useEffect(() => {
+        const fetchClientes = async () => {
+            try {
+                const response = await api.get('/clientes');
+                setClientes(response.data);
+            } catch {
+                alert('Erro ao carregar a listagem de clientes.');
+            }
+        };
+        fetchClientes();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../service/api';
 import './style.css';
 
@@ -8,14 +8,24 @@ export default function Funcionarios() {
 
     const carregarFuncionarios = async () => {
         try {
-        const response = await api.get('/funcionarios');
-        setFuncionarios(response.data);
-        } catch (error) {
-        alert('Erro ao carregar a listagem de funcionários.');
+            const response = await api.get('/funcionarios');
+            setFuncionarios(response.data);
+        } catch {
+            alert('Erro ao carregar a listagem de funcionários.');
         }
     };
 
-    useEffect(() => { carregarFuncionarios(); }, []);
+    useEffect(() => {
+        const fetchFuncionarios = async () => {
+            try {
+                const response = await api.get('/funcionarios');
+                setFuncionarios(response.data);
+            } catch {
+                alert('Erro ao carregar a listagem de funcionários.');
+            }
+        };
+        fetchFuncionarios();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
